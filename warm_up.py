@@ -10,13 +10,15 @@ class LinkedList:
 
     def add(self, item):
         self.head = Node(item, self.head)
-
+        self.size += 1
+        
     def remove(self):
         if self.is_empty():
             return None
         else:
             item = self.head.item
             self.head = self.head.next
+            self.size -= 1
             return item
 
     def is_empty(self):
